@@ -15,10 +15,6 @@ const MeetingSetup = ({
   if (!call) {
     throw new Error("use call must be used with in stream call component");
   }
-  const handleclick = () => {
-    setIsSetupComplete(true);
-  };
-  const router = useRouter();
   useEffect(() => {
     if (isMicCamToggledOn) {
       call?.microphone.disable();
@@ -48,7 +44,7 @@ const MeetingSetup = ({
       </div>
       <Button
         className="rounded-lg bg-green-500 px-4 py-3.5"
-        onClick={handleclick}
+        onClick={() => setIsSetupComplete(true)}
       >
         Join meeting
       </Button>
