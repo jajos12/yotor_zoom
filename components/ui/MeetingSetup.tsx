@@ -2,6 +2,7 @@
 import { useCall, VideoPreview } from "@stream-io/video-react-sdk";
 import React, { useEffect, useState } from "react";
 import { Button } from "./button";
+import { useRouter } from "next/navigation";
 
 const MeetingSetup = ({
   setIsSetupComplete,
@@ -17,13 +18,16 @@ const MeetingSetup = ({
   const handleclick = () => {
     setIsSetupComplete(true);
   };
+  const router = useRouter();
   useEffect(() => {
     if (isMicCamToggledOn) {
       call?.microphone.disable();
+      call?.camera.disable();
     } else {
       call?.microphone.enable();
+      call?.camera.enable();
     }
-  }, [isMicCamToggledOn, call?.microphone]);
+  }, [isMicCamToggledOn, call?.microphone, call?.camera]);
 
   return (
     <div className="flex-center flex-col w-full h-screen gap-3 text-white">
