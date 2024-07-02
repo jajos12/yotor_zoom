@@ -13,7 +13,7 @@ export const useGetCallById = (id: string | string[]) => {
       const result = await client.queryCalls({
         filter_conditions: { id },
       });
-      alert(result.calls);
+      console.log(result);
       if (result.calls.length > 0) {
         setCall(result.calls[0]);
       }
