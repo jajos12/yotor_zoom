@@ -4,11 +4,9 @@ import React, { ReactNode } from "react";
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <ClerkProvider>
-      <StreamVideoProvider>
-        <main>{children}</main>
-      </StreamVideoProvider>
-    </ClerkProvider>
+    <StreamVideoProvider>
+      <main>{children}</main>
+    </StreamVideoProvider>
   );
 };
 

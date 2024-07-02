@@ -38,6 +38,8 @@ const MeetingRoom = () => {
           <CallParticipantsList onClose={() => setShowParticipant(false)} />
         </div>
       </div>
+
+      <div className="fixed flex-center bottom-0 w-full gap-5"></div>
     </section>
   );
 };
