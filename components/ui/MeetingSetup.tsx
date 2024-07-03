@@ -2,7 +2,6 @@
 import { useCall, VideoPreview } from "@stream-io/video-react-sdk";
 import React, { useEffect, useState } from "react";
 import { Button } from "./button";
-import { useRouter } from "next/navigation";
 
 const MeetingSetup = ({
   setIsSetupComplete,
