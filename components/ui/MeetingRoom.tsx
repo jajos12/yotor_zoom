@@ -5,6 +5,7 @@ import {
   CallParticipantsList,
   PaginatedGridLayout,
   SpeakerLayout,
+  VideoPreview,
 } from "@stream-io/video-react-sdk";
 import React, { useState } from "react";
 
@@ -28,6 +29,7 @@ const MeetingRoom = () => {
     <section className="relative text-white overflow-hidden h-screen w-full pt-4">
       <div className="relative flex-center size-full">
         <div className="flex items-center size-full max-w-[1000px]">
+          <VideoPreview />
           <CallLayout />
         </div>
         <div
