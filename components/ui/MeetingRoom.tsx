@@ -1,6 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import {
+  CallControls,
   CallParticipantsList,
   PaginatedGridLayout,
   SpeakerLayout,
@@ -27,11 +28,10 @@ const MeetingRoom = () => {
     <section className="relative text-white overflow-hidden h-screen w-full pt-4">
       <div className="relative flex-center size-full">
         <div className="flex items-center size-full max-w-[1000px]">
-          Hello participants!
           <CallLayout />
         </div>
         <div
-          className={cn("h-[cal(100vh-86px)] hidden ml-2", {
+          className={cn("h-[calc(100vh-86px)] hidden ml-2", {
             "show-block": showParticipant,
           })}
         >
@@ -39,7 +39,9 @@ const MeetingRoom = () => {
         </div>
       </div>
 
-      <div className="fixed flex-center bottom-0 w-full gap-5"></div>
+      <div className="fixed flex-center bottom-0 w-full gap-5">
+        <CallControls />
+      </div>
     </section>
   );
 };
