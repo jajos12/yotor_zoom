@@ -13,7 +13,7 @@ type Layout = "grid" | "speaker-right" | "speker-left";
 
 const MeetingRoom = () => {
   const [speakerLayout, setSpeakerLayout] = useState<Layout>();
-  const [showParticipant, setShowParticipant] = useState(false);
+  const [showParticipant, setShowParticipant] = useState(true);
   const CallLayout = () => {
     switch (speakerLayout) {
       case "grid":
@@ -33,7 +33,7 @@ const MeetingRoom = () => {
           <CallLayout />
         </div>
         <div
-          className={cn("h-[calc(100vh-86px)] hidden ml-2", {
+          className={cn("h-[calc(100vh-86px)] ml-2", {
             "show-block": showParticipant,
           })}
         >
