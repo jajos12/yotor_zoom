@@ -1,20 +1,20 @@
-import { HomeLinks } from "@/app/constants";
+import { HomeLinks } from "@/constants";
 import Image from "next/image";
 import React from "react";
 
 interface NewHomeLinks {
   bg_color: string;
   iconUrl: string;
-  leadingText: string;
-  paragraph: string;
+  title: string;
+  description: string;
   handleClick: () => void;
 }
 
 const HomeCard = ({
   bg_color,
   iconUrl,
-  leadingText,
-  paragraph,
+  title,
+  description,
   handleClick,
 }: NewHomeLinks) => {
   return (
@@ -26,8 +26,8 @@ const HomeCard = ({
         <Image src={iconUrl} alt="meeting" width={27} height={27} />
       </div>
       <div className="flex flex-col gap-2">
-        <h1 className="text-2xl font-bold">{leadingText}</h1>
-        <p className="text-lg font-normal">{paragraph}</p>
+        <h1 className="text-2xl font-bold">{title}</h1>
+        <p className="text-lg font-normal">{description}</p>
       </div>
     </div>
   );

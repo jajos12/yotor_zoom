@@ -2,7 +2,7 @@
 import Loader from "@/components/ui/Loader";
 import MeetingRoom from "@/components/ui/MeetingRoom";
 import MeetingSetup from "@/components/ui/MeetingSetup";
-import { useGetCallById } from "@/hooks/useGetCall byId";
+import { useGetCallById } from "@/hooks/useGetCallById";
 import { useUser } from "@clerk/nextjs";
 import {
   CallControls,
@@ -21,15 +21,15 @@ const Meeting = ({ params: { id } }: { params: { id: string } }) => {
   }
   return (
     <main className="h-screen w-full">
-      <StreamCall call={call}>
-        <StreamTheme>
+      <StreamTheme>
+        <StreamCall call={call}>
           {!isSetupComplete ? (
             <MeetingSetup setIsSetupComplete={setIsSetupComplete} />
           ) : (
             <MeetingRoom />
           )}
-        </StreamTheme>
-      </StreamCall>
+        </StreamCall>
+      </StreamTheme>
     </main>
   );
 };

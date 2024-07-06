@@ -1,15 +1,21 @@
 "use client";
-import { useCall, VideoPreview } from "@stream-io/video-react-sdk";
+import {
+  useCall,
+  useStreamVideoClient,
+  VideoPreview,
+} from "@stream-io/video-react-sdk";
 import React, { useEffect, useState } from "react";
 import { Button } from "./button";
-
+import { usePathname } from "next/navigation";
 const MeetingSetup = ({
   setIsSetupComplete,
 }: {
   setIsSetupComplete: (value: boolean) => void;
 }) => {
+  const router = usePathname();
   const [isMicCamToggledOn, setIsMicCamToggledOn] = useState(false);
   const call = useCall();
+  const client = useStreamVideoClient();
 
   if (!call) {
     throw new Error("use call must be used with in stream call component");
@@ -43,7 +49,10 @@ const MeetingSetup = ({
       </div>
       <Button
         className="rounded-lg bg-green-500 px-4 py-3.5"
-        onClick={() => setIsSetupComplete(true)}
+        onClick={() => {
+          call.join();
+          setIsSetupComplete(true);
+        }}
       >
         Join meeting
       </Button>

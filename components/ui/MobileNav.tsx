@@ -1,5 +1,5 @@
 "use client";
-import { SideNavLinks } from "@/app/constants";
+import { SideNavLinks } from "@/constants";
 import {
   Sheet,
   SheetClose,
